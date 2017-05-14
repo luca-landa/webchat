@@ -6,7 +6,7 @@ App.room = App.cable.subscriptions.create({channel: "RoomChannel", room: 5}, {
     speak: onSpeak
 });
 
-$(document).on('keypress', '#chat-textfield', (event) => {
+$(document).on('keypress', '#chat-textfield', function(event) {
     if (event.keyCode === 13) {
     App.room.speak(event.target.value);
     event.target.value = '';
